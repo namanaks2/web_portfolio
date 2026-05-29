@@ -1,0 +1,32 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUp } from "lucide-react";
+
+export default function BackToTop() {
+  const [visible, setVisible] = useState(false);
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
+      setVisible(window.scrollY > 500);
+    }, { passive: true });
+  }
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/50 transition-shadow duration-300 group"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
+}

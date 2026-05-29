@@ -1,26 +1,221 @@
 @import "tailwindcss";
 
+@theme {
+  --color-purple-400: #d67a65;
+  --color-purple-500: #c2593f;
+  --color-purple-600: #a3442d;
+  
+  --color-blue-400: #738b71;
+  --color-blue-500: #597057;
+  --color-blue-600: #465844;
+  
+  --color-cyan-300: #f59e0b;
+  --color-cyan-400: #d97706;
+  --color-cyan-500: #b45309;
+
+  --color-gray-50: #fdfdfc;
+  --color-gray-100: #f5f0e6;
+  --color-gray-200: #ebe4d5;
+  --color-gray-300: #ded5c2;
+  --color-gray-400: #c9bda5;
+  --color-gray-500: #9e8e76;
+  --color-gray-600: #7d6f59;
+  --color-gray-700: #605441;
+  --color-gray-800: #493e30;
+  --color-gray-900: #2d261e;
+  --color-gray-950: #1d1913;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #f5f0e6;
+  --text-primary: #2d261e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --bg-primary: #27221c;
+  --text-primary: #f5f0e6;
+
+  --color-gray-50: #1d1913;
+  --color-gray-100: #27221c;
+  --color-gray-200: #352e26;
+  --color-gray-300: #4c4236;
+  --color-gray-400: #736553;
+  --color-gray-500: #9a8a75;
+  --color-gray-600: #b5a794;
+  --color-gray-700: #d1c7b7;
+  --color-gray-800: #e2dcd0;
+  --color-gray-900: #f5f0e6;
+  --color-gray-950: #fcfbfa;
+
+  --color-purple-400: #f4a261;
+  --color-purple-500: #e07a5f;
+  --color-purple-600: #cf6f4d;
+  
+  --color-blue-400: #8fa88d;
+  --color-blue-500: #738b71;
+  --color-blue-600: #597057;
+  
+  --color-cyan-300: #fbbf24;
+  --color-cyan-400: #f59e0b;
+  --color-cyan-500: #d97706;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   Global Styles & Custom Properties
+   ============================================ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================
+   Base styles
+   ============================================ */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Custom scrollbar adjustments to match warm colors */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c2593f, #597057);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a3442d, #465844);
+}
+
+/* ============================================
+   Custom scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6, #3b82f6);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7c3aed, #2563eb);
+}
+
+/* ============================================
+   Selection styles
+   ============================================ */
+::selection {
+  background: rgba(139, 92, 246, 0.3);
+  color: inherit;
+}
+
+/* ============================================
+   Font family utilities
+   ============================================ */
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ============================================
+   Glassmorphism utility
+   ============================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   Gradient text animation
+   ============================================ */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* ============================================
+   Glow effects
+   ============================================ */
+.glow-purple {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+/* ============================================
+   Line clamp utilities
+   ============================================ */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================
+   Easter egg: Konami code hint
+   ============================================ */
+.easter-egg-active {
+  animation: rainbow-border 2s linear infinite;
+}
+
+@keyframes rainbow-border {
+  0% { border-color: #ff0000; }
+  17% { border-color: #ff8800; }
+  33% { border-color: #ffff00; }
+  50% { border-color: #00ff00; }
+  67% { border-color: #0088ff; }
+  83% { border-color: #8800ff; }
+  100% { border-color: #ff0000; }
+}
+
+/* ============================================
+   Focus styles for accessibility
+   ============================================ */
+:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   Smooth section transitions
+   ============================================ */
+section {
+  position: relative;
 }
