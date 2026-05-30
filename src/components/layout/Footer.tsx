@@ -2,13 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Mail, Heart, ArrowUp } from "lucide-react";
-import { LinkedinIcon, InstagramIcon, GithubIcon } from "@/components/ui/SocialIcons";
+import { LinkedinIcon, GithubIcon } from "@/components/ui/SocialIcons";
 
 const socialLinks = [
-  { icon: LinkedinIcon, href: "https://linkedin.com/in/namangupta", label: "LinkedIn", color: "hover:text-blue-400" },
-  { icon: GithubIcon, href: "https://github.com/namangupta", label: "GitHub", color: "hover:text-gray-300" },
-  { icon: Mail, href: "mailto:naman@gmail.com", label: "Gmail", color: "hover:text-red-400" },
-  { icon: InstagramIcon, href: "https://instagram.com/namangupta", label: "Instagram", color: "hover:text-pink-400" },
+  { icon: LinkedinIcon, href: "https://www.linkedin.com/in/naman-gupta-64687230a/", label: "LinkedIn", color: "hover:text-blue-400" },
+  { icon: GithubIcon, href: "https://github.com/namanaks2", label: "GitHub", color: "hover:text-gray-300" },
+  { icon: Mail, href: "mailto:namanaks2@gmail.com", label: "Gmail", color: "hover:text-red-400" },
 ];
 
 const quickLinks = [
@@ -91,8 +90,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-gray-200/30 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500 dark:text-gray-500 flex items-center gap-1">
-            © {currentYear} Naman Gupta. Built with{" "}
-            <Heart className="w-3 h-3 text-red-400 fill-red-400" /> using
+            © {currentYear} Naman Gupta. Built with using
             Next.js & Tailwind CSS
           </p>
           <button

@@ -57,7 +57,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 ${
         scrolled
-          ? "bg-white/70 dark:bg-gray-950/70 backdrop-blur-xl border-b border-gray-200/20 dark:border-white/5 shadow-lg shadow-black/5"
+          ? "bg-gray-50/80 dark:bg-gray-950/80 backdrop-blur-xl border-b border-gray-200/30 dark:border-gray-800/50 shadow-lg shadow-black/5 dark:shadow-black/20"
           : "bg-transparent"
       }`}
     >
@@ -98,7 +98,7 @@ export default function Navbar() {
             <motion.button
               data-theme-toggle
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-white/5 border border-gray-200/20 dark:border-white/10 hover:bg-white/10 transition-colors"
+              className="p-2 rounded-full bg-gray-100/50 dark:bg-gray-800/50 border border-gray-200/30 dark:border-gray-700/50 hover:bg-gray-200/50 dark:hover:bg-gray-700/50 transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle theme"
@@ -131,7 +131,7 @@ export default function Navbar() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg bg-white/5 border border-gray-200/20 dark:border-white/10 hover:bg-white/10 transition-colors"
+              className="md:hidden p-2 rounded-lg bg-gray-100/50 dark:bg-gray-800/50 border border-gray-200/30 dark:border-gray-700/50 hover:bg-gray-200/50 dark:hover:bg-gray-700/50 transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? (

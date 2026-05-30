@@ -89,7 +89,7 @@ export default function Resume() {
             {[
               { icon: "💼", title: "Experience", desc: "2+ years in web development and freelancing" },
               { icon: "🎓", title: "Education", desc: "B.Tech CSE — 8.5 CGPA" },
-              { icon: "🏆", title: "Achievements", desc: "5+ certifications & hackathon wins" },
+              { icon: "🏆", title: "Achievements", desc: "8+ certifications & hackathon wins" },
             ].map((item, i) => (
               <motion.div
                 key={item.title}

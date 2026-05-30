@@ -7,7 +7,7 @@ import { User, Rocket, Code2, Lightbulb } from "lucide-react";
 const stats = [
   { label: "Projects Completed", value: 15, suffix: "+", icon: "🚀" },
   { label: "Skills Learned", value: 25, suffix: "+", icon: "⚡" },
-  { label: "Hackathons & Internships", value: 5, suffix: "+", icon: "🏆" },
+  { label: "Hackathons & Internships", value: 8, suffix: "+", icon: "🏆" },
   { label: "Years Learning", value: 3, suffix: "+", icon: "📚" },
 ];
 
@@ -87,16 +87,10 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-              I&apos;m a <strong className="text-purple-500">B.Tech student</strong> passionate
-              about building technology that makes a difference. My journey
-              spans across web development, data science, and entrepreneurship.
+              I&apos;m a <strong className="text-purple-500">B.Tech student</strong> driven by a passion for building technology that creates meaningful impact. My interests span across web development, data science, product design, and entrepreneurship, allowing me to explore technology from multiple perspectives.
             </p>
             <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-              From crafting elegant user interfaces to diving deep into data
-              analytics, I love the entire spectrum of tech. I believe in
-              learning by building — every project I take on pushes me to
-              explore new frameworks, solve complex problems, and think like a
-              product builder.
+              I love learning by building. Whether it's developing responsive web applications, exploring data-driven insights, or experimenting with new technologies, every project helps me grow as a developer and problem solver.
             </p>
             <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
               With an entrepreneurial mindset, I approach every challenge as an

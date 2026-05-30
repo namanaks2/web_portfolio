@@ -96,19 +96,6 @@ export const projects: Project[] = [
     image: "/projects/finance-tracker.webp",
     stats: { stars: 63, forks: 16, views: 2100 },
   },
-  {
-    id: 7,
-    title: "Electronics Marketplace UI",
-    description: "A premium e-commerce UI for electronics with advanced filtering, comparison, and wishlist features.",
-    longDescription: "High-fidelity e-commerce interface for electronics marketplace. Features advanced product filtering, side-by-side comparison, dynamic pricing displays, and a premium shopping experience.",
-    technologies: ["React", "Tailwind CSS", "Figma", "Framer Motion", "REST API"],
-    category: "UI/UX",
-    github: "https://github.com/namangupta",
-    live: "#",
-    featured: false,
-    image: "/projects/electronics-market.webp",
-    stats: { stars: 29, forks: 7, views: 780 },
-  },
 ];
 
 export const projectCategories = ["All", "Frontend", "Backend", "Data Science", "UI/UX", "Tools"];

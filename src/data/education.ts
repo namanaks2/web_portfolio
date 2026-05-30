@@ -13,10 +13,10 @@ export interface Education {
 export const education: Education[] = [
   {
     id: 1,
-    degree: "B.Tech in Computer Science & Engineering",
-    institution: "University Institute of Technology",
-    duration: "2023 – 2027 (Expected)",
-    grade: "CGPA: 8.5/10",
+    degree: "B.Tech in Computer Science & Engineering (Data Science)",
+    institution: "K.R. Mangalam University",
+    duration: "2025 – 2029 (Expected)",
+    grade: "CGPA: 8.2/10",
     description: "Currently pursuing Bachelor of Technology with a focus on software engineering, data science, and entrepreneurship. Active member of the coding club and tech innovation cell.",
     coursework: [
       "Data Structures & Algorithms",
@@ -32,16 +32,16 @@ export const education: Education[] = [
   },
   {
     id: 2,
-    degree: "Senior Secondary (XII) – Science",
-    institution: "Modern Academy School",
-    duration: "2021 – 2023",
-    grade: "92.4%",
-    description: "Completed senior secondary education with distinction in Mathematics, Physics, and Computer Science. Participated in inter-school coding competitions.",
+    degree: "Senior Secondary (XII) – Non-Medical",
+    institution: "Modern School, Faridabad",
+    duration: "2017 – 2024",
+    grade: "87.2%",
+    description: "Completed senior secondary education with distinction in Mathematics, Physics, Chemistry and Information Technology.",
     coursework: [
       "Mathematics",
       "Physics",
       "Chemistry",
-      "Computer Science",
+      "Information Technology",
       "English",
     ],
     icon: "School",

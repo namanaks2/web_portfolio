@@ -10,42 +10,35 @@ import {
   MapPin,
   Clock,
 } from "lucide-react";
-import { LinkedinIcon, InstagramIcon, GithubIcon } from "@/components/ui/SocialIcons";
+import { LinkedinIcon, GithubIcon } from "@/components/ui/SocialIcons";
 import toast, { Toaster } from "react-hot-toast";
 
 const contactCards = [
   {
     icon: Mail,
     label: "Email",
-    value: "naman@gmail.com",
-    href: "mailto:naman@gmail.com",
+    value: "namanaks2@gmail.com",
+    href: "mailto:namanaks2@gmail.com",
     color: "from-red-500/10 to-orange-500/10 border-red-500/20",
     iconColor: "text-red-400",
   },
   {
     icon: LinkedinIcon,
     label: "LinkedIn",
-    value: "linkedin.com/in/namangupta",
-    href: "https://linkedin.com/in/namangupta",
+    value: "https://www.linkedin.com/in/naman-gupta-64687230a/",
+    href: "https://www.linkedin.com/in/naman-gupta-64687230a/",
     color: "from-blue-500/10 to-cyan-500/10 border-blue-500/20",
     iconColor: "text-blue-400",
   },
   {
     icon: GithubIcon,
     label: "GitHub",
-    value: "github.com/namangupta",
-    href: "https://github.com/namangupta",
+    value: "github.com/namanaks2",
+    href: "https://github.com/namanaks2",
     color: "from-gray-500/10 to-gray-400/10 border-gray-500/20",
     iconColor: "text-gray-400",
   },
-  {
-    icon: InstagramIcon,
-    label: "Instagram",
-    value: "@namangupta",
-    href: "https://instagram.com/namangupta",
-    color: "from-pink-500/10 to-purple-500/10 border-pink-500/20",
-    iconColor: "text-pink-400",
-  },
+
 ];
 
 export default function Contact() {

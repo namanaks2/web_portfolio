@@ -13,6 +13,11 @@
   --color-cyan-400: #d97706;
   --color-cyan-500: #b45309;
 
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+
   --color-gray-50: #fdfdfc;
   --color-gray-100: #f5f0e6;
   --color-gray-200: #ebe4d5;
@@ -58,6 +63,13 @@
   --color-cyan-300: #fbbf24;
   --color-cyan-400: #f59e0b;
   --color-cyan-500: #d97706;
+
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+
+  --color-white: #f5f0e6;
 }
 
 /* ============================================

@@ -56,19 +56,4 @@ export const experiences: Experience[] = [
     technologies: ["Next.js", "Node.js", "MongoDB", "Figma"],
     icon: "Code2",
   },
-  {
-    id: 4,
-    title: "Open Source Contributor",
-    company: "GitHub Community",
-    type: "Community",
-    duration: "Mar 2024 – Present",
-    description: [
-      "Contributed to popular open-source repositories",
-      "Fixed bugs and implemented new features in React libraries",
-      "Engaged in code reviews and community discussions",
-      "Maintained personal open-source projects with 100+ stars",
-    ],
-    technologies: ["React", "TypeScript", "Python", "Open Source"],
-    icon: "GitBranch",
-  },
 ];
