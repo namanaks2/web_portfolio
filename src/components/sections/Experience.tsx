@@ -66,9 +66,11 @@ export default function Experience() {
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
                     {exp.title}
                   </h3>
-                  <p className="text-sm text-purple-500 dark:text-purple-400 font-medium mb-1">
-                    {exp.company}
-                  </p>
+                  {exp.company && (
+                    <p className="text-sm text-purple-500 dark:text-purple-400 font-medium mb-1">
+                      {exp.company}
+                    </p>
+                  )}
                   <p className="text-xs text-gray-400 mb-4">{exp.duration}</p>
 
                   <ul className="space-y-2 mb-6">

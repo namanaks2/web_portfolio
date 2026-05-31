@@ -2,7 +2,7 @@
 export interface Experience {
   id: number;
   title: string;
-  company: string;
+  company?: string;
   type: string;
   duration: string;
   description: string[];
@@ -13,12 +13,12 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: 1,
-    title: "Frontend Developer Intern",
-    company: "Tech Startup Studio",
+    title: "Researchd and UI/UX Intern",
+    company: "10XGrowth",
     type: "Internship",
-    duration: "Jun 2025 – Aug 2025",
+    duration: "October 2024 – May 2025",
     description: [
-      "Developed responsive web interfaces using React and Tailwind CSS",
+      "Developed responsive web interfaces using Figma",
       "Collaborated with the design team to implement pixel-perfect UI components",
       "Optimized application performance, improving load times by 40%",
       "Participated in daily standups and agile sprint planning",
@@ -28,15 +28,15 @@ export const experiences: Experience[] = [
   },
   {
     id: 2,
-    title: "Technical Team Lead",
-    company: "College Tech Club",
+    title: "Industrial Projects - Team Lead",
+    // company: "College Tech Club",
     type: "Leadership",
-    duration: "Sep 2024 – Present",
+    duration: "January 2026 – May 2026",
     description: [
-      "Leading a team of 15+ developers on campus tech projects",
-      "Organized workshops on web development and data science",
+      "Leading a team of 4+ developers on campus tech projects",
+      "Built a Startup Dashboard",
       "Mentored junior developers on modern development practices",
-      "Coordinated hackathon participation and project showcases",
+      "Coordinated teammates and project showcase",
     ],
     technologies: ["Team Management", "Web Dev", "Python", "Event Planning"],
     icon: "Users",
@@ -46,11 +46,11 @@ export const experiences: Experience[] = [
     title: "Freelance Web Developer",
     company: "Independent Projects",
     type: "Freelance",
-    duration: "Jan 2024 – Present",
+    duration: "January 2024 – Present",
     description: [
       "Designed and developed custom websites for local businesses",
       "Built full-stack applications with modern frameworks",
-      "Delivered 5+ projects with excellent client satisfaction",
+      "Delivered 6+ projects with excellent client satisfaction",
       "Managed complete project lifecycle from design to deployment",
     ],
     technologies: ["Next.js", "Node.js", "MongoDB", "Figma"],

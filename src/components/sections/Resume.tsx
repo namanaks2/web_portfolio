@@ -57,7 +57,7 @@ export default function Resume() {
 
             {/* Download button */}
             <motion.a
-              href="/resume.pdf"
+              href="Naman-Resume.pdf"
               download
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
@@ -88,7 +88,7 @@ export default function Resume() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
             {[
               { icon: "💼", title: "Experience", desc: "2+ years in web development and freelancing" },
-              { icon: "🎓", title: "Education", desc: "B.Tech CSE — 8.5 CGPA" },
+              { icon: "🎓", title: "Education", desc: "B.Tech CSE — 8.2 CGPA" },
               { icon: "🏆", title: "Achievements", desc: "8+ certifications & hackathon wins" },
             ].map((item, i) => (
               <motion.div
@@ -114,3 +114,4 @@ export default function Resume() {
     </section>
   );
 }
+

@@ -11,7 +11,6 @@ import Experience from "@/components/sections/Experience";
 import Education from "@/components/sections/Education";
 import Projects from "@/components/sections/Projects";
 import Resume from "@/components/sections/Resume";
-import Achievements from "@/components/sections/Achievements";
 import Contact from "@/components/sections/Contact";
 
 // Dynamic imports for performance-heavy UI components
@@ -39,7 +38,6 @@ export default function Home() {
         <Education />
         <Projects />
         <Resume />
-        <Achievements />
         <Contact />
       </main>
 

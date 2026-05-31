@@ -70,32 +70,6 @@ export const projects: Project[] = [
     image: "/projects/kitchen-customizer.webp",
     stats: { stars: 34, forks: 8, views: 950 },
   },
-  {
-    id: 5,
-    title: "Event Booking App",
-    description: "A modern event booking platform with seat selection, QR tickets, and real-time availability.",
-    longDescription: "Full-featured event booking application with interactive seat maps, QR code ticket generation, payment integration, and real-time availability tracking. Built with a focus on mobile-first design.",
-    technologies: ["Next.js", "Firebase", "Tailwind CSS", "QR.js", "Stripe"],
-    category: "Frontend",
-    github: "https://github.com/namangupta",
-    live: "#",
-    featured: false,
-    image: "/projects/event-booking.webp",
-    stats: { stars: 41, forks: 10, views: 1350 },
-  },
-  {
-    id: 6,
-    title: "Finance & Expense Tracker",
-    description: "Smart expense tracking app with AI categorization, budget alerts, and visual spending analytics.",
-    longDescription: "Intelligent personal finance tracker with automated expense categorization using ML, budget management, spending analytics dashboards, and predictive insights for better financial planning.",
-    technologies: ["Python", "React", "SQL", "Chart.js", "Scikit-learn"],
-    category: "Data Science",
-    github: "https://github.com/namangupta",
-    live: "#",
-    featured: false,
-    image: "/projects/finance-tracker.webp",
-    stats: { stars: 63, forks: 16, views: 2100 },
-  },
 ];
 
 export const projectCategories = ["All", "Frontend", "Backend", "Data Science", "UI/UX", "Tools"];
