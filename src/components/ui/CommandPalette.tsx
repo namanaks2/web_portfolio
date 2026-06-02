@@ -14,7 +14,6 @@ const commands = [
   { label: "Go to Resume", section: "resume", icon: "📄" },
   { label: "Go to Achievements", section: "achievements", icon: "🏆" },
   { label: "Go to Contact", section: "contact", icon: "📧" },
-  { label: "Toggle Theme", section: "theme", icon: "🌙" },
   { label: "Download Resume", section: "download-resume", icon: "📥" },
 ];
 
@@ -33,10 +32,7 @@ export default function CommandPalette() {
       setIsOpen(false);
       setQuery("");
 
-      if (section === "theme") {
-        document.querySelector<HTMLButtonElement>("[data-theme-toggle]")?.click();
-        return;
-      }
+
       if (section === "download-resume") {
         // Trigger resume download
         return;

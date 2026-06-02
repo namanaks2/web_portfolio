@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useCallback } from "react";
-import { useTheme } from "@/context/ThemeContext";
 
 interface Particle {
   x: number;
@@ -13,20 +12,17 @@ interface Particle {
   color: string;
 }
 
+const particleColors = ["#c2593f", "#597057", "#d97706", "#c75a40", "#b45309"];
+
 export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const animationRef = useRef<number>(0);
   const mouseRef = useRef({ x: 0, y: 0 });
-  const { theme } = useTheme();
-
-  const darkColors = ["#c2593f", "#597057", "#d97706", "#c75a40", "#b45309"];
-  const lightColors = ["#d57a66", "#738b71", "#e09c4d", "#cf6f4d", "#c27829"];
 
   const initParticles = useCallback(
     (width: number, height: number) => {
       const count = Math.min(Math.floor((width * height) / 15000), 80);
-      const colors = theme === "dark" ? darkColors : lightColors;
       const particles: Particle[] = [];
 
       for (let i = 0; i < count; i++) {
@@ -37,13 +33,13 @@ export default function ParticleBackground() {
           vy: (Math.random() - 0.5) * 0.5,
           size: Math.random() * 2 + 1,
           opacity: Math.random() * 0.5 + 0.1,
-          color: colors[Math.floor(Math.random() * colors.length)],
+          color: particleColors[Math.floor(Math.random() * particleColors.length)],
         });
       }
 
       particlesRef.current = particles;
     },
-    [theme]
+    []
   );
 
   useEffect(() => {
@@ -138,7 +134,7 @@ export default function ParticleBackground() {
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [theme, initParticles]);
+  }, [initParticles]);
 
   return (
     <canvas
