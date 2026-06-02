@@ -57,7 +57,7 @@ export default function Resume() {
 
             {/* Download button */}
             <motion.a
-              href="Naman-Resume.pdf"
+              href="/Naman-Resume.pdf"
               download
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               whileHover={{ scale: 1.05 }}

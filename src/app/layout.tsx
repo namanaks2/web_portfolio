@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://namangupta.dev"),
   title: "Naman Gupta | Developer · Data Science · Startups",
   description:
     "Personal portfolio of Naman Gupta — a B.Tech student, full-stack developer, aspiring data scientist, startup enthusiast, and UI/UX learner building innovative digital products.",

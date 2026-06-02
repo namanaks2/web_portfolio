@@ -10,7 +10,9 @@ import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
 import Education from "@/components/sections/Education";
 import Projects from "@/components/sections/Projects";
+import Achievements from "@/components/sections/Achievements";
 import Resume from "@/components/sections/Resume";
+import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 
 // Dynamic imports for performance-heavy UI components
@@ -18,6 +20,7 @@ const ParticleBackground = dynamic(() => import("@/components/ui/ParticleBackgro
 const ScrollProgress = dynamic(() => import("@/components/ui/ScrollProgress"), { ssr: false });
 const CommandPalette = dynamic(() => import("@/components/ui/CommandPalette"), { ssr: false });
 const BackToTop = dynamic(() => import("@/components/ui/BackToTop"), { ssr: false });
+const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor"), { ssr: false });
 
 export default function Home() {
   return (
@@ -27,6 +30,7 @@ export default function Home() {
       <ParticleBackground />
       <CommandPalette />
       <BackToTop />
+      <CustomCursor />
 
       <Navbar />
 
@@ -37,7 +41,9 @@ export default function Home() {
         <Experience />
         <Education />
         <Projects />
+        <Achievements />
         <Resume />
+        <Testimonials />
         <Contact />
       </main>
 

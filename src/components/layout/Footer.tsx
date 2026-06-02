@@ -90,8 +90,9 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-gray-200/30 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500 dark:text-gray-500 flex items-center gap-1">
-            © {currentYear} Naman Gupta. Built with using
-            Next.js & Tailwind CSS
+            © {currentYear} Naman Gupta. Built with
+            <Heart className="w-3 h-3 text-red-400 inline" />
+            using Next.js &amp; Tailwind CSS
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
