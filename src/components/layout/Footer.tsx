@@ -22,7 +22,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-gray-100 dark:bg-gray-950 border-t border-gray-200/30 dark:border-white/5">
+    <footer
+      className="relative"
+      style={{
+        backgroundColor: "var(--footer-bg)",
+        borderTop: "1px solid var(--card-border)",
+      }}
+    >
       {/* Gradient line */}
       <div className="h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
 
@@ -33,14 +39,14 @@ export default function Footer() {
             <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
               Naman Gupta
             </h3>
-            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--text-muted)" }}>
               Developer, aspiring data scientist, and startup enthusiast building innovative digital experiences.
             </p>
           </div>
 
           {/* Quick links */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-800 dark:text-white uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "var(--heading-color)" }}>
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -54,7 +60,8 @@ export default function Footer() {
                         .getElementById(link.href.replace("#", ""))
                         ?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="text-sm text-gray-500 dark:text-gray-400 hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
+                    className="text-sm hover:text-purple-500 transition-colors"
+                    style={{ color: "var(--text-muted)" }}
                   >
                     {link.label}
                   </a>
@@ -65,7 +72,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-800 dark:text-white uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "var(--heading-color)" }}>
               Connect
             </h4>
             <div className="flex gap-3">
@@ -75,7 +82,12 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-2.5 rounded-xl bg-gray-200/50 dark:bg-white/5 border border-gray-300/30 dark:border-white/10 text-gray-500 ${social.color} transition-colors`}
+                  className={`p-2.5 rounded-xl ${social.color} transition-colors`}
+                  style={{
+                    backgroundColor: "var(--card-bg)",
+                    border: "1px solid var(--card-border)",
+                    color: "var(--text-muted)",
+                  }}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={social.label}
@@ -88,15 +100,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-gray-200/30 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-500 dark:text-gray-500 flex items-center gap-1">
+        <div
+          className="mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderTop: "1px solid var(--card-border)" }}
+        >
+          <p className="text-xs flex items-center gap-1" style={{ color: "var(--text-muted)" }}>
             © {currentYear} Naman Gupta. Built with
             <Heart className="w-3 h-3 text-red-400 inline" />
             using Next.js &amp; Tailwind CSS
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500 hover:text-purple-500 dark:hover:text-purple-400 transition-colors group"
+            className="flex items-center gap-2 text-xs hover:text-purple-500 transition-colors group"
+            style={{ color: "var(--text-muted)" }}
           >
             Back to top
             <ArrowUp className="w-3 h-3 group-hover:-translate-y-0.5 transition-transform" />

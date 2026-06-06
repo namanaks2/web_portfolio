@@ -6,7 +6,10 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-950 relative overflow-hidden">
+    <div
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      style={{ backgroundColor: "var(--bg-primary)" }}
+    >
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
@@ -29,7 +32,8 @@ export default function NotFound() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-3"
+          className="text-xl md:text-2xl font-semibold mb-3"
+          style={{ color: "var(--heading-color)" }}
         >
           Page Not Found
         </motion.p>
@@ -38,7 +42,8 @@ export default function NotFound() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-gray-500 dark:text-gray-400 mb-8 max-w-md mx-auto"
+          className="mb-8 max-w-md mx-auto"
+          style={{ color: "var(--text-muted)" }}
         >
           The page you&apos;re looking for doesn&apos;t exist or has been moved. Let&apos;s get
           you back on track.
@@ -59,7 +64,12 @@ export default function NotFound() {
           </Link>
           <button
             onClick={() => window.history.back()}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-white/10 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300"
+            style={{
+              backgroundColor: "var(--card-bg)",
+              border: "1px solid var(--card-border)",
+              color: "var(--text-primary)",
+            }}
           >
             <ArrowLeft className="w-4 h-4" />
             Go Back

@@ -72,10 +72,17 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-300 text-sm font-medium mb-4">
+          <span
+            className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
+            style={{
+              backgroundColor: "var(--badge-bg)",
+              border: "1px solid var(--badge-border)",
+              color: "var(--badge-text)",
+            }}
+          >
             Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--heading-color)" }}>
             What People{" "}
             <span className="bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
               Say
@@ -95,11 +102,15 @@ export default function Testimonials() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="p-8 md:p-10 rounded-2xl bg-white/80 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 backdrop-blur-sm text-center"
+                className="p-8 md:p-10 rounded-2xl backdrop-blur-sm text-center"
+                style={{
+                  backgroundColor: "var(--card-bg)",
+                  border: "1px solid var(--card-border)",
+                }}
               >
                 <Quote className="w-8 h-8 text-purple-400/30 mx-auto mb-4" />
 
-                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6 italic">
+                <p className="text-lg leading-relaxed mb-6 italic" style={{ color: "var(--text-secondary)" }}>
                   &ldquo;{testimonials[current].text}&rdquo;
                 </p>
 
@@ -109,10 +120,10 @@ export default function Testimonials() {
                     {testimonials[current].avatar}
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-gray-900 dark:text-white text-sm">
+                    <p className="font-semibold text-sm" style={{ color: "var(--heading-color)" }}>
                       {testimonials[current].name}
                     </p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                    <p className="text-xs" style={{ color: "var(--text-muted)" }}>
                       {testimonials[current].role}
                     </p>
                   </div>
@@ -125,7 +136,12 @@ export default function Testimonials() {
           <div className="flex items-center justify-center gap-4 mt-6">
             <button
               onClick={() => navigate(-1)}
-              className="p-2 rounded-full bg-white/50 dark:bg-white/5 border border-gray-200/30 dark:border-white/10 text-gray-500 hover:text-purple-500 transition-colors"
+              className="p-2 rounded-full hover:text-purple-500 transition-colors"
+              style={{
+                backgroundColor: "var(--card-bg)",
+                border: "1px solid var(--card-border)",
+                color: "var(--text-muted)",
+              }}
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -142,8 +158,9 @@ export default function Testimonials() {
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     i === current
                       ? "w-6 bg-purple-500"
-                      : "bg-gray-300 dark:bg-gray-600"
+                      : ""
                   }`}
+                  style={i !== current ? { backgroundColor: "var(--text-muted)" } : undefined}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />
               ))}
@@ -151,7 +168,12 @@ export default function Testimonials() {
 
             <button
               onClick={() => navigate(1)}
-              className="p-2 rounded-full bg-white/50 dark:bg-white/5 border border-gray-200/30 dark:border-white/10 text-gray-500 hover:text-purple-500 transition-colors"
+              className="p-2 rounded-full hover:text-purple-500 transition-colors"
+              style={{
+                backgroundColor: "var(--card-bg)",
+                border: "1px solid var(--card-border)",
+                color: "var(--text-muted)",
+              }}
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5" />

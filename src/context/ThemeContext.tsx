@@ -21,17 +21,34 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const saved = localStorage.getItem("portfolio-theme") as "dark" | "light" | null;
     if (saved) {
       setTheme(saved);
-      document.documentElement.classList.toggle("dark", saved === "dark");
+      applyTheme(saved);
     } else {
-      document.documentElement.classList.add("dark");
+      // Respect system preference
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initial = prefersDark ? "dark" : "light";
+      setTheme(initial);
+      applyTheme(initial);
     }
   }, []);
+
+  const applyTheme = (t: "dark" | "light") => {
+    if (t === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    // Update meta theme-color for mobile browsers
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute("content", t === "dark" ? "#0f0d0a" : "#f5f0e6");
+    }
+  };
 
   const toggleTheme = useCallback(() => {
     setTheme((prev) => {
       const next = prev === "dark" ? "light" : "dark";
       localStorage.setItem("portfolio-theme", next);
-      document.documentElement.classList.toggle("dark", next === "dark");
+      applyTheme(next);
       return next;
     });
   }, []);

@@ -107,10 +107,17 @@ export default function CommandPalette() {
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-lg mx-4 rounded-2xl border border-white/10 bg-gray-900/95 dark:bg-gray-900/95 shadow-2xl overflow-hidden"
+            className="relative w-full max-w-lg mx-4 rounded-2xl shadow-2xl overflow-hidden"
+            style={{
+              backgroundColor: "var(--bg-secondary)",
+              border: "1px solid var(--card-border)",
+            }}
           >
             {/* Search input */}
-            <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
+            <div
+              className="flex items-center gap-3 px-4 py-3"
+              style={{ borderBottom: "1px solid var(--card-border)" }}
+            >
               <Search className="w-5 h-5 text-purple-400 shrink-0" />
               <input
                 ref={inputRef}
@@ -119,17 +126,27 @@ export default function CommandPalette() {
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search commands..."
-                className="flex-1 bg-transparent text-white placeholder-gray-400 outline-none text-sm"
+                className="flex-1 bg-transparent outline-none text-sm"
+                style={{ color: "var(--text-primary)" }}
               />
-              <div className="flex items-center gap-1 text-xs text-gray-500">
-                <kbd className="px-1.5 py-0.5 rounded bg-gray-800 border border-gray-700 text-gray-400 font-mono">ESC</kbd>
+              <div className="flex items-center gap-1 text-xs" style={{ color: "var(--text-muted)" }}>
+                <kbd
+                  className="px-1.5 py-0.5 rounded font-mono"
+                  style={{
+                    backgroundColor: "var(--glass-bg)",
+                    border: "1px solid var(--glass-border)",
+                    color: "var(--text-muted)",
+                  }}
+                >
+                  ESC
+                </kbd>
               </div>
             </div>
 
             {/* Results */}
             <div className="max-h-[300px] overflow-y-auto py-2">
               {filtered.length === 0 ? (
-                <p className="px-4 py-8 text-center text-gray-500 text-sm">
+                <p className="px-4 py-8 text-center text-sm" style={{ color: "var(--text-muted)" }}>
                   No results found.
                 </p>
               ) : (
@@ -138,11 +155,15 @@ export default function CommandPalette() {
                     key={cmd.section}
                     onClick={() => executeCommand(cmd.section)}
                     onMouseEnter={() => setSelectedIndex(index)}
-                    className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors text-sm ${
-                      index === selectedIndex
-                        ? "bg-purple-500/20 text-white"
-                        : "text-gray-300 hover:bg-white/5"
-                    }`}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-left transition-colors text-sm"
+                    style={{
+                      backgroundColor:
+                        index === selectedIndex ? "var(--badge-bg)" : "transparent",
+                      color:
+                        index === selectedIndex
+                          ? "var(--text-primary)"
+                          : "var(--text-secondary)",
+                    }}
                   >
                     <span className="text-lg">{cmd.icon}</span>
                     <span className="flex-1">{cmd.label}</span>
@@ -155,7 +176,13 @@ export default function CommandPalette() {
             </div>
 
             {/* Footer hint */}
-            <div className="flex items-center justify-between px-4 py-2 border-t border-white/10 text-xs text-gray-500">
+            <div
+              className="flex items-center justify-between px-4 py-2 text-xs"
+              style={{
+                borderTop: "1px solid var(--card-border)",
+                color: "var(--text-muted)",
+              }}
+            >
               <span>Navigate with ↑↓ · Select with ↵</span>
               <div className="flex items-center gap-1">
                 <Command className="w-3 h-3" />

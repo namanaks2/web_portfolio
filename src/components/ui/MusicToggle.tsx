@@ -62,7 +62,11 @@ export default function MusicToggle() {
   return (
     <motion.button
       onClick={toggle}
-      className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+      className="p-2 rounded-full transition-colors"
+      style={{
+        backgroundColor: "var(--card-bg)",
+        border: "1px solid var(--card-border)",
+      }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       aria-label={isPlaying ? "Mute ambient sound" : "Play ambient sound"}
@@ -71,7 +75,7 @@ export default function MusicToggle() {
       {isPlaying ? (
         <Volume2 className="w-4 h-4 text-purple-400" />
       ) : (
-        <VolumeX className="w-4 h-4 text-gray-400" />
+        <VolumeX className="w-4 h-4" style={{ color: "var(--text-muted)" }} />
       )}
     </motion.button>
   );

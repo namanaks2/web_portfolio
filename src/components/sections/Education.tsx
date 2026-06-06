@@ -21,16 +21,23 @@ export default function Education() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-300 text-sm font-medium mb-4">
+          <span
+            className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
+            style={{
+              backgroundColor: "var(--badge-bg)",
+              border: "1px solid var(--badge-border)",
+              color: "var(--badge-text)",
+            }}
+          >
             Education
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--heading-color)" }}>
             Academic{" "}
             <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
               Journey
             </span>
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p style={{ color: "var(--text-muted)" }} className="max-w-2xl mx-auto">
             My educational background and academic achievements.
           </p>
         </motion.div>
@@ -45,7 +52,11 @@ export default function Education() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               whileHover={{ y: -4 }}
-              className="group relative p-6 md:p-8 rounded-2xl bg-white/80 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 backdrop-blur-sm hover:border-indigo-500/30 transition-all duration-300"
+              className="group relative p-6 md:p-8 rounded-2xl backdrop-blur-sm hover:border-indigo-500/30 transition-all duration-300"
+              style={{
+                backgroundColor: "var(--card-bg)",
+                border: "1px solid var(--card-border)",
+              }}
             >
               {/* Gradient accent */}
               <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -58,28 +69,28 @@ export default function Education() {
 
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-bold" style={{ color: "var(--heading-color)" }}>
                       {edu.degree}
                     </h3>
-                    <span className="text-sm font-medium text-indigo-500 dark:text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full whitespace-nowrap">
+                    <span className="text-sm font-medium text-indigo-500 bg-indigo-500/10 px-3 py-1 rounded-full whitespace-nowrap">
                       {edu.grade}
                     </span>
                   </div>
 
-                  <p className="text-purple-500 dark:text-purple-400 font-medium text-sm mb-1">
+                  <p className="text-purple-500 font-medium text-sm mb-1">
                     {edu.institution}
                   </p>
-                  <p className="text-xs text-gray-400 mb-4">{edu.duration}</p>
+                  <p className="text-xs mb-4" style={{ color: "var(--text-muted)" }}>{edu.duration}</p>
 
-                  <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
                     {edu.description}
                   </p>
 
                   {/* Coursework */}
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <BookOpen className="w-4 h-4 text-gray-400" />
-                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      <BookOpen className="w-4 h-4" style={{ color: "var(--text-muted)" }} />
+                      <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
                         Relevant Coursework
                       </span>
                     </div>
@@ -87,7 +98,12 @@ export default function Education() {
                       {edu.coursework.map((course) => (
                         <span
                           key={course}
-                          className="px-2.5 py-1 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 text-xs text-gray-600 dark:text-gray-400 hover:bg-indigo-500/10 hover:border-indigo-500/20 hover:text-indigo-500 dark:hover:text-indigo-400 transition-all duration-200"
+                          className="px-2.5 py-1 rounded-lg text-xs hover:bg-indigo-500/10 hover:border-indigo-500/20 hover:text-indigo-500 transition-all duration-200"
+                          style={{
+                            backgroundColor: "var(--glass-bg)",
+                            border: "1px solid var(--glass-border)",
+                            color: "var(--text-muted)",
+                          }}
                         >
                           {course}
                         </span>

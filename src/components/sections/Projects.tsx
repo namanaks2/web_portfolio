@@ -26,16 +26,23 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-600 dark:text-orange-300 text-sm font-medium mb-4">
+          <span
+            className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
+            style={{
+              backgroundColor: "var(--badge-bg)",
+              border: "1px solid var(--badge-border)",
+              color: "var(--badge-text)",
+            }}
+          >
             Portfolio
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--heading-color)" }}>
             Featured{" "}
             <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p style={{ color: "var(--text-muted)" }} className="max-w-2xl mx-auto">
             A collection of projects showcasing my development skills and creative problem-solving.
           </p>
         </motion.div>
@@ -60,15 +67,17 @@ export default function Projects() {
                     hoveredId === project.id
                       ? "perspective(1000px) rotateY(2deg) rotateX(-2deg)"
                       : "perspective(1000px) rotateY(0deg) rotateX(0deg)",
+                  backgroundColor: "var(--card-bg)",
+                  border: "1px solid var(--card-border)",
                 }}
-                className="h-full p-6 rounded-2xl bg-white/80 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 backdrop-blur-sm hover:border-purple-500/30 transition-all duration-500 flex flex-col relative overflow-hidden"
+                className="h-full p-6 rounded-2xl backdrop-blur-sm hover:border-purple-500/30 transition-all duration-500 flex flex-col relative overflow-hidden"
               >
                 {/* Spotlight effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Project image placeholder */}
-                <div className="relative h-40 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 mb-5 overflow-hidden group-hover:shadow-lg transition-shadow duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 flex items-center justify-center">
+                <div className="relative h-40 rounded-xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 mb-5 overflow-hidden group-hover:shadow-lg transition-shadow duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-4xl font-bold text-white/30">
                       {project.title
                         .split(" ")
@@ -100,14 +109,14 @@ export default function Projects() {
 
                 <div className="relative z-10 flex-1 flex flex-col">
                   {/* Category badge */}
-                  <span className="inline-block w-fit px-2.5 py-0.5 rounded-md bg-purple-500/10 text-purple-500 dark:text-purple-400 text-xs font-medium mb-2">
+                  <span className="inline-block w-fit px-2.5 py-0.5 rounded-md bg-purple-500/10 text-purple-500 text-xs font-medium mb-2">
                     {project.category}
                   </span>
 
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="font-bold mb-2" style={{ color: "var(--heading-color)" }}>
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-1 line-clamp-2">
+                  <p className="text-sm mb-4 flex-1 line-clamp-2" style={{ color: "var(--text-muted)" }}>
                     {project.description}
                   </p>
 
@@ -116,13 +125,18 @@ export default function Projects() {
                     {project.technologies.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 rounded-md bg-gray-100 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 text-xs text-gray-500 dark:text-gray-400"
+                        className="px-2 py-0.5 rounded-md text-xs"
+                        style={{
+                          backgroundColor: "var(--glass-bg)",
+                          border: "1px solid var(--glass-border)",
+                          color: "var(--text-muted)",
+                        }}
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 4 && (
-                      <span className="px-2 py-0.5 rounded-md text-xs text-gray-400">
+                      <span className="px-2 py-0.5 rounded-md text-xs" style={{ color: "var(--text-muted)" }}>
                         +{project.technologies.length - 4}
                       </span>
                     )}
@@ -134,7 +148,12 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 text-gray-600 dark:text-gray-300 text-xs font-medium hover:bg-gray-200 dark:hover:bg-white/10 transition-colors flex-1 justify-center"
+                      className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors flex-1 justify-center"
+                      style={{
+                        backgroundColor: "var(--glass-bg)",
+                        border: "1px solid var(--glass-border)",
+                        color: "var(--text-secondary)",
+                      }}
                     >
                       <GithubIcon className="w-3.5 h-3.5" />
                       Code

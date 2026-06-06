@@ -87,9 +87,9 @@ export default function Contact() {
         position="bottom-right"
         toastOptions={{
           style: {
-            background: "#1e1e2e",
-            color: "#fff",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background: "var(--bg-secondary)",
+            color: "var(--text-primary)",
+            border: "1px solid var(--card-border)",
             borderRadius: "12px",
           },
         }}
@@ -104,16 +104,23 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-600 dark:text-pink-300 text-sm font-medium mb-4">
+          <span
+            className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
+            style={{
+              backgroundColor: "var(--badge-bg)",
+              border: "1px solid var(--badge-border)",
+              color: "var(--badge-text)",
+            }}
+          >
             Get In Touch
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--heading-color)" }}>
             Let&apos;s{" "}
             <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
               Connect
             </span>
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p style={{ color: "var(--text-muted)" }} className="max-w-2xl mx-auto">
             Have a project in mind, a question, or just want to say hi? I&apos;d
             love to hear from you.
           </p>
@@ -131,7 +138,8 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="contact-name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: "var(--text-secondary)" }}
                 >
                   Name
                 </label>
@@ -143,14 +151,20 @@ export default function Contact() {
                     setFormData({ ...formData, name: e.target.value })
                   }
                   placeholder="Your name"
-                  className="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all"
+                  className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all"
+                  style={{
+                    backgroundColor: "var(--input-bg)",
+                    border: "1px solid var(--input-border)",
+                    color: "var(--text-primary)",
+                  }}
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="contact-email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: "var(--text-secondary)" }}
                 >
                   Email
                 </label>
@@ -162,14 +176,20 @@ export default function Contact() {
                     setFormData({ ...formData, email: e.target.value })
                   }
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all"
+                  className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all"
+                  style={{
+                    backgroundColor: "var(--input-bg)",
+                    border: "1px solid var(--input-border)",
+                    color: "var(--text-primary)",
+                  }}
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="contact-message"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: "var(--text-secondary)" }}
                 >
                   Message
                 </label>
@@ -181,7 +201,12 @@ export default function Contact() {
                   }
                   placeholder="Tell me about your project..."
                   rows={5}
-                  className="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all resize-none"
+                  style={{
+                    backgroundColor: "var(--input-bg)",
+                    border: "1px solid var(--input-border)",
+                    color: "var(--text-primary)",
+                  }}
                 />
               </div>
 
@@ -213,16 +238,22 @@ export default function Contact() {
             className="space-y-4"
           >
             {/* Info */}
-            <div className="p-5 rounded-2xl bg-white/80 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 mb-6">
+            <div
+              className="p-5 rounded-2xl mb-6"
+              style={{
+                backgroundColor: "var(--card-bg)",
+                border: "1px solid var(--card-border)",
+              }}
+            >
               <div className="flex items-center gap-3 mb-3">
                 <MapPin className="w-4 h-4 text-purple-400" />
-                <span className="text-sm text-gray-600 dark:text-gray-300">
+                <span className="text-sm" style={{ color: "var(--text-secondary)" }}>
                   India
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-purple-400" />
-                <span className="text-sm text-gray-600 dark:text-gray-300">
+                <span className="text-sm" style={{ color: "var(--text-secondary)" }}>
                   IST (UTC+5:30) · Usually responds within 24h
                 </span>
               </div>
@@ -235,25 +266,26 @@ export default function Contact() {
                 className={`group flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r ${card.color} backdrop-blur-sm transition-all duration-300 cursor-pointer`}
                 onClick={() => copyToClipboard(card.value, i)}
               >
-                <div className={`p-2.5 rounded-lg bg-white/50 dark:bg-white/10 ${card.iconColor}`}>
+                <div className={`p-2.5 rounded-lg ${card.iconColor}`} style={{ backgroundColor: "var(--glass-bg)" }}>
                   <card.icon className="w-5 h-5" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider">
+                  <p className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
                     {card.label}
                   </p>
-                  <p className="text-sm text-gray-900 dark:text-white truncate">
+                  <p className="text-sm truncate" style={{ color: "var(--text-primary)" }}>
                     {card.value}
                   </p>
                 </div>
                 <button
-                  className="p-2 rounded-lg bg-white/50 dark:bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ backgroundColor: "var(--glass-bg)" }}
                   aria-label={`Copy ${card.label}`}
                 >
                   {copiedIndex === i ? (
                     <Check className="w-4 h-4 text-green-400" />
                   ) : (
-                    <Copy className="w-4 h-4 text-gray-400" />
+                    <Copy className="w-4 h-4" style={{ color: "var(--text-muted)" }} />
                   )}
                 </button>
               </motion.div>

@@ -63,16 +63,23 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-300 text-sm font-medium mb-4">
+          <span
+            className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
+            style={{
+              backgroundColor: "var(--badge-bg)",
+              border: "1px solid var(--badge-border)",
+              color: "var(--badge-text)",
+            }}
+          >
             About Me
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--heading-color)" }}>
             Know Who{" "}
             <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
               I Am
             </span>
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p style={{ color: "var(--text-muted)" }} className="max-w-2xl mx-auto">
             A snapshot of my journey, passions, and what drives me forward.
           </p>
         </motion.div>
@@ -86,13 +93,13 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+            <p className="leading-relaxed text-lg" style={{ color: "var(--text-secondary)" }}>
               I&apos;m a <strong className="text-purple-500">B.Tech student</strong> driven by a passion for building technology that creates meaningful impact. My interests span across web development, data science, product design, and entrepreneurship, allowing me to explore technology from multiple perspectives.
             </p>
-            <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
+            <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
               I love learning by building. Whether it's developing responsive web applications, exploring data-driven insights, or experimenting with new technologies, every project helps me grow as a developer and problem solver.
             </p>
-            <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
+            <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
               With an entrepreneurial mindset, I approach every challenge as an
               opportunity to innovate. Whether it&apos;s leading tech teams,
               participating in hackathons, or launching side projects, I&apos;m
@@ -111,7 +118,12 @@ export default function About() {
               ].map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1.5 rounded-lg bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 text-sm hover:bg-purple-500/10 hover:border-purple-500/20 hover:text-purple-500 dark:hover:text-purple-400 transition-all duration-300 cursor-default"
+                  className="px-3 py-1.5 rounded-lg text-sm hover:bg-purple-500/10 hover:border-purple-500/20 hover:text-purple-500 transition-all duration-300 cursor-default"
+                  style={{
+                    backgroundColor: "var(--card-bg)",
+                    border: "1px solid var(--card-border)",
+                    color: "var(--text-secondary)",
+                  }}
                 >
                   {tag}
                 </span>
@@ -167,10 +179,10 @@ export default function About() {
                 className={`p-5 rounded-2xl bg-gradient-to-br ${card.gradient} border ${card.border} backdrop-blur-sm transition-all duration-300`}
               >
                 <card.icon className={`w-8 h-8 ${card.iconColor} mb-3`} />
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">
+                <h4 className="font-semibold mb-1 text-sm" style={{ color: "var(--heading-color)" }}>
                   {card.title}
                 </h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
                   {card.desc}
                 </p>
               </motion.div>
@@ -187,7 +199,11 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative p-6 rounded-2xl bg-white/80 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 backdrop-blur-sm text-center group hover:border-purple-500/30 transition-all duration-300"
+              className="relative p-6 rounded-2xl backdrop-blur-sm text-center group hover:border-purple-500/30 transition-all duration-300"
+              style={{
+                backgroundColor: "var(--card-bg)",
+                border: "1px solid var(--card-border)",
+              }}
             >
               <span className="text-2xl mb-2 block">{stat.icon}</span>
               <AnimatedCounter
@@ -195,7 +211,7 @@ export default function About() {
                 suffix={stat.suffix}
                 inView={isInView}
               />
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+              <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>
                 {stat.label}
               </p>
             </motion.div>

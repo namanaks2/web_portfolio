@@ -31,52 +31,61 @@
   --color-gray-950: #1d1913;
 }
 
+/* ============================================
+   Light theme (default)
+   ============================================ */
 :root {
   --bg-primary: #f5f0e6;
+  --bg-secondary: #ebe4d5;
   --text-primary: #2d261e;
-}
-
-.dark {
-  --bg-primary: #27221c;
-  --text-primary: #f5f0e6;
-
-  --color-gray-50: #1d1913;
-  --color-gray-100: #27221c;
-  --color-gray-200: #352e26;
-  --color-gray-300: #4c4236;
-  --color-gray-400: #736553;
-  --color-gray-500: #9a8a75;
-  --color-gray-600: #b5a794;
-  --color-gray-700: #d1c7b7;
-  --color-gray-800: #e2dcd0;
-  --color-gray-900: #f5f0e6;
-  --color-gray-950: #fcfbfa;
-
-  --color-purple-400: #f4a261;
-  --color-purple-500: #e07a5f;
-  --color-purple-600: #cf6f4d;
-  
-  --color-blue-400: #8fa88d;
-  --color-blue-500: #738b71;
-  --color-blue-600: #597057;
-  
-  --color-cyan-300: #fbbf24;
-  --color-cyan-400: #f59e0b;
-  --color-cyan-500: #d97706;
-
-  --color-green-300: #86efac;
-  --color-green-400: #4ade80;
-  --color-green-500: #22c55e;
-  --color-green-600: #16a34a;
-
-  --color-white: #f5f0e6;
+  --text-secondary: #605441;
+  --text-muted: #9e8e76;
+  --border-color: rgba(45, 38, 30, 0.12);
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-border: rgba(45, 38, 30, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(45, 38, 30, 0.08);
+  --nav-bg: rgba(245, 240, 230, 0.85);
+  --nav-border: rgba(45, 38, 30, 0.1);
+  --nav-text: #605441;
+  --nav-text-active: #c2593f;
+  --nav-hover: #2d261e;
+  --heading-color: #2d261e;
+  --badge-bg: rgba(194, 89, 63, 0.08);
+  --badge-border: rgba(194, 89, 63, 0.15);
+  --badge-text: #c2593f;
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --input-border: rgba(45, 38, 30, 0.12);
+  --footer-bg: #ebe4d5;
 }
 
 /* ============================================
-   Global Styles & Custom Properties
+   Dark theme
    ============================================ */
-
-@custom-variant dark (&:where(.dark, .dark *));
+.dark {
+  --bg-primary: #0f0d0a;
+  --bg-secondary: #1a1714;
+  --text-primary: #f5f0e6;
+  --text-secondary: #c9bda5;
+  --text-muted: #9e8e76;
+  --border-color: rgba(255, 255, 255, 0.06);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --nav-bg: rgba(15, 13, 10, 0.85);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --nav-text: #c9bda5;
+  --nav-text-active: #d67a65;
+  --nav-hover: #f5f0e6;
+  --heading-color: #f5f0e6;
+  --badge-bg: rgba(194, 89, 63, 0.12);
+  --badge-border: rgba(194, 89, 63, 0.25);
+  --badge-text: #d67a65;
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.08);
+  --footer-bg: #0a0908;
+}
 
 /* ============================================
    Base styles
@@ -89,14 +98,15 @@ body {
   font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Outfit", sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--heading-color);
 }
 
 /* ============================================
@@ -135,13 +145,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
-   Glassmorphism utility
+   Glassmorphism utility — theme-aware
    ============================================ */
 .glass {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+}
+
+/* ============================================
+   Theme-aware card utility
+   ============================================ */
+.theme-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ============================================
+   Theme-aware section heading colors
+   ============================================ */
+.section-heading {
+  color: var(--heading-color);
+}
+
+.section-subtext {
+  color: var(--text-muted);
+}
+
+.section-body {
+  color: var(--text-secondary);
 }
 
 /* ============================================
@@ -220,4 +255,23 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 section {
   position: relative;
+}
+
+/* ============================================
+   Theme transition for all elements
+   ============================================ */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Exclude motion-related transitions from theme transition */
+[style*="transform"],
+canvas,
+.animate-ping,
+.animate-spin,
+.animate-bounce,
+.animate-pulse {
+  transition-property: none;
 }

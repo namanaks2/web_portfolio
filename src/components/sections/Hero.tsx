@@ -138,13 +138,13 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
           ref={blobRef}
-          className="absolute top-1/4 -left-20 w-72 h-72 md:w-[28rem] md:h-[28rem] bg-purple-500/20 dark:bg-purple-500/10 rounded-full blur-3xl"
+          className="absolute top-1/4 -left-20 w-72 h-72 md:w-[28rem] md:h-[28rem] bg-purple-500/15 dark:bg-purple-500/10 rounded-full blur-3xl"
         />
         <div
           ref={blob2Ref}
-          className="absolute bottom-1/4 -right-20 w-72 h-72 md:w-[28rem] md:h-[28rem] bg-blue-500/20 dark:bg-blue-500/10 rounded-full blur-3xl"
+          className="absolute bottom-1/4 -right-20 w-72 h-72 md:w-[28rem] md:h-[28rem] bg-blue-500/15 dark:bg-blue-500/10 rounded-full blur-3xl"
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/8 dark:bg-cyan-500/5 rounded-full blur-3xl" />
       </div>
 
       {/* Floating particles */}
@@ -152,7 +152,7 @@ export default function Hero() {
 
       {/* Subtle grid pattern overlay */}
       <div
-        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.1) 1px, transparent 1px)",
@@ -170,13 +170,17 @@ export default function Hero() {
           {/* Status badge */}
           <motion.div
             variants={fadeUp}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
+            style={{
+              backgroundColor: "var(--badge-bg)",
+              border: "1px solid var(--badge-border)",
+            }}
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
             </span>
-            <span className="text-sm text-purple-600 dark:text-purple-300 font-medium">
+            <span className="text-sm font-medium" style={{ color: "var(--badge-text)" }}>
               Open to work &amp; collaborations
             </span>
           </motion.div>
@@ -185,8 +189,9 @@ export default function Hero() {
           <motion.h1
             variants={fadeUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-2"
+            style={{ color: "var(--heading-color)" }}
           >
-            <span className="text-gray-900 dark:text-white">
+            <span>
               Hi, I&apos;m{" "}
             </span>
             <span className="relative inline-block">
@@ -211,7 +216,8 @@ export default function Hero() {
           {/* Subheading with typing */}
           <motion.div
             variants={fadeUp}
-            className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6 h-9"
+            className="text-lg sm:text-xl md:text-2xl mb-6 h-9"
+            style={{ color: "var(--text-secondary)" }}
           >
             <TypeAnimation
               sequence={[
@@ -236,14 +242,15 @@ export default function Hero() {
           {/* Professional description */}
           <motion.p
             variants={fadeUp}
-            className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-base md:text-lg"
+            className="max-w-2xl mx-auto mb-10 leading-relaxed text-base md:text-lg"
+            style={{ color: "var(--text-muted)" }}
           >
             B.Tech undergraduate crafting{" "}
-            <span className="text-gray-700 dark:text-gray-200 font-medium">
+            <span className="font-medium" style={{ color: "var(--text-primary)" }}>
               scalable software
             </span>{" "}
             and{" "}
-            <span className="text-gray-700 dark:text-gray-200 font-medium">
+            <span className="font-medium" style={{ color: "var(--text-primary)" }}>
               data-driven solutions
             </span>
             . I blend engineering precision with entrepreneurial thinking to
@@ -277,7 +284,12 @@ export default function Hero() {
             <motion.a
               href="/Naman-Resume.pdf"
               download
-              className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 font-medium text-sm backdrop-blur-sm overflow-hidden"
+              className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-medium text-sm backdrop-blur-sm overflow-hidden"
+              style={{
+                backgroundColor: "var(--card-bg)",
+                border: "1px solid var(--card-border)",
+                color: "var(--text-primary)",
+              }}
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -294,7 +306,12 @@ export default function Hero() {
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 font-medium text-sm backdrop-blur-sm overflow-hidden"
+              className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-medium text-sm backdrop-blur-sm overflow-hidden"
+              style={{
+                backgroundColor: "var(--card-bg)",
+                border: "1px solid var(--card-border)",
+                color: "var(--text-primary)",
+              }}
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -315,7 +332,12 @@ export default function Hero() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-3 rounded-xl bg-white/50 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 text-gray-500 transition-all duration-300 ${social.color}`}
+                className={`p-3 rounded-xl transition-all duration-300 ${social.color}`}
+                style={{
+                  backgroundColor: "var(--card-bg)",
+                  border: "1px solid var(--card-border)",
+                  color: "var(--text-muted)",
+                }}
                 whileHover={{ scale: 1.15, y: -4, rotate: [0, -5, 5, 0] }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
@@ -337,14 +359,11 @@ export default function Hero() {
         transition={{ delay: 2.5, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        {/* <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-medium">
-          Scroll to explore
-        </span> */}
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-5 h-5 text-purple-400" />
+          <ChevronDown className="w-5 h-5" style={{ color: "var(--badge-text)" }} />
         </motion.div>
       </motion.div>
     </section>

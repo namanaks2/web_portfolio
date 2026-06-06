@@ -42,16 +42,23 @@ export default function Achievements() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-600 dark:text-yellow-300 text-sm font-medium mb-4">
+          <span
+            className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
+            style={{
+              backgroundColor: "var(--badge-bg)",
+              border: "1px solid var(--badge-border)",
+              color: "var(--badge-text)",
+            }}
+          >
             Achievements
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--heading-color)" }}>
             Badges &{" "}
             <span className="bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
               Milestones
             </span>
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p style={{ color: "var(--text-muted)" }} className="max-w-2xl mx-auto">
             Certifications, hackathons, and achievements along my journey.
           </p>
         </motion.div>
@@ -65,8 +72,17 @@ export default function Achievements() {
               className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium capitalize transition-all duration-300 ${
                 filter === opt
                   ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-lg shadow-yellow-500/25"
-                  : "text-gray-600 dark:text-gray-300 bg-white/50 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 hover:bg-white/80 dark:hover:bg-white/10"
+                  : ""
               }`}
+              style={
+                filter !== opt
+                  ? {
+                      backgroundColor: "var(--card-bg)",
+                      border: "1px solid var(--card-border)",
+                      color: "var(--text-secondary)",
+                    }
+                  : undefined
+              }
             >
               {opt === "All" && <Filter className="w-3.5 h-3.5" />}
               {opt}
@@ -96,17 +112,19 @@ export default function Achievements() {
                 </div>
 
                 {/* Type badge */}
-                <span className={`inline-block px-2 py-0.5 rounded-md text-[10px] font-semibold uppercase tracking-wider mb-2 ${colors.split(" ").pop()} bg-white/50 dark:bg-white/10`}>
+                <span className={`inline-block px-2 py-0.5 rounded-md text-[10px] font-semibold uppercase tracking-wider mb-2 ${colors.split(" ").pop()}`}
+                  style={{ backgroundColor: "var(--glass-bg)" }}
+                >
                   {ach.type}
                 </span>
 
-                <h4 className="font-bold text-gray-900 dark:text-white text-sm mb-1 line-clamp-2">
+                <h4 className="font-bold text-sm mb-1 line-clamp-2" style={{ color: "var(--heading-color)" }}>
                   {ach.title}
                 </h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+                <p className="text-xs mb-2" style={{ color: "var(--text-muted)" }}>
                   {ach.organization} · {ach.date}
                 </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed">
+                <p className="text-xs line-clamp-3 leading-relaxed" style={{ color: "var(--text-muted)" }}>
                   {ach.description}
                 </p>
 

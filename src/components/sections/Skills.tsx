@@ -17,8 +17,8 @@ export default function Skills() {
     <section id="skills" className="relative py-24 md:py-32">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/5 dark:bg-purple-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-blue-500/5 dark:bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,16 +30,23 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-300 text-sm font-medium mb-4">
+          <span
+            className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
+            style={{
+              backgroundColor: "var(--badge-bg)",
+              border: "1px solid var(--badge-border)",
+              color: "var(--badge-text)",
+            }}
+          >
             Skills & Technologies
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--heading-color)" }}>
             My{" "}
             <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
               Tech Stack
             </span>
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p style={{ color: "var(--text-muted)" }} className="max-w-2xl mx-auto">
             Technologies and tools I use to bring ideas to life.
           </p>
         </motion.div>
@@ -55,7 +62,11 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-                className="group relative rounded-2xl bg-white/60 dark:bg-white/[0.03] border border-gray-200/60 dark:border-white/[0.06] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-purple-500/30 dark:hover:border-purple-500/20 hover:shadow-xl hover:shadow-purple-500/5"
+                className="group relative rounded-2xl backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-purple-500/30 hover:shadow-xl hover:shadow-purple-500/5"
+                style={{
+                  backgroundColor: "var(--card-bg)",
+                  border: "1px solid var(--card-border)",
+                }}
               >
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
@@ -67,7 +78,7 @@ export default function Skills() {
                   <div className={`p-2.5 rounded-xl bg-gradient-to-br ${cat.color} shadow-lg`}>
                     {IconComponent && <IconComponent className="w-5 h-5 text-white" />}
                   </div>
-                  <h3 className="font-bold text-gray-900 dark:text-white text-lg">{cat.title}</h3>
+                  <h3 className="font-bold text-lg" style={{ color: "var(--heading-color)" }}>{cat.title}</h3>
                 </div>
 
                 {/* Skills as tags/chips */}
@@ -79,7 +90,12 @@ export default function Skills() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: catIndex * 0.08 + i * 0.04 }}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gray-100/80 dark:bg-white/[0.05] border border-gray-200/50 dark:border-white/[0.08] text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-purple-500/10 hover:border-purple-500/20 hover:text-purple-600 dark:hover:text-purple-300 transition-all duration-300 cursor-default"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium hover:bg-purple-500/10 hover:border-purple-500/20 hover:text-purple-500 transition-all duration-300 cursor-default"
+                      style={{
+                        backgroundColor: "var(--glass-bg)",
+                        border: "1px solid var(--glass-border)",
+                        color: "var(--text-secondary)",
+                      }}
                     >
                       <span className="text-base">{skill.icon}</span>
                       {skill.name}
